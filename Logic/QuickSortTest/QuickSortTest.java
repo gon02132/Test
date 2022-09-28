@@ -1,5 +1,3 @@
-package dummy;
-
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -53,11 +51,11 @@ public class QuickSortTest {
         afterTime = System.currentTimeMillis();
         System.out.println((afterTime - beforeTime) + "ms: Arrays.sort");
 
-        beforeTime = System.currentTimeMillis();
-        dualQuickSortThread(arr6);
-        afterTime = System.currentTimeMillis();
+        // beforeTime = System.currentTimeMillis();
+        // dualQuickSortThread(arr6);
+        // afterTime = System.currentTimeMillis();
         // System.out.println(Arrays.toString(arr6));
-        System.out.println("DualThr:" + (afterTime - beforeTime) + "ms");
+        // System.out.println("DualThr:" + (afterTime - beforeTime) + "ms");
 
     }
 
