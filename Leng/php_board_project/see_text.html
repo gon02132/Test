@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        #dat_space{
+            border: 1px solid;
+            overflow:auto;
+        }
+        #back_list, #repair, #delete{
+            display: inline-block;
+        }
+    </style>
+
+    <script src="select_see.js?ver=16"></script>
+</head>
+<body onload=main_see()>
+<form action="DB_ALTER.php" method="POST" id ="alter_submit">
+    <input type="hidden" name="see_cyka" value = "">
+    <table border="1px">
+        <tr>
+            <td id = "title">제목:</td>
+            <td id = "user_name">작성자:</td>
+            <td id = "his">조회수:</td>
+            <td id = "date">작성/수정 날짜:</td>
+        </tr>
+        <tr id = "tr_temp">
+            <td colspan="4" id = "text_area">내용 나오는곳</td>
+        </tr>
+        <td colspan="4" id="options">
+            <div id ="back_list">목록</div>
+            <div id = "repair">수정</div>
+            <div id = "delete">삭제</div>
+        </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <textarea cols="90" name="dat_area"></textarea>
+                <input type="button" value="쓰기" onclick=dat_write(document.getElementsByName("see_cyka")[0].value)>
+            </td>
+        </tr>
+    </table>
+    <!--
+    <table id="dat_space" border="1px">
+        <tr>
+            <td>작성자</td>
+            <td width="180px">작성/수정 날짜/댓글달기</td>
+            <td>내용</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    -->
+    <div id="dat_space">
+    </div>
+</form>
+</body>
+</html>

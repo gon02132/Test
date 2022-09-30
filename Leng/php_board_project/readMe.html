@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            background: #222;
+            min-width: 960px;
+        }
+
+        rect {
+            fill: none;
+            pointer-events: all;
+        }
+
+        circle {
+            fill: none;
+            stroke-width: 2.5px;
+        }
+    </style>
+</head>
+<body>
+<form action="list.html" id ="notice_form" method="POST">
+    <div id="notice" style="color: white">
+        로그인을 하지 않을 시, 게시글의 내용은 볼 수 없습니다.<br>
+        자신이 만든 게시글이 아니라면 수정,삭제가 불가능 합니다<br>
+        <br>
+        댓글 또한 자신이 만든 것만 수정,삭제가 가능합니다<br>
+        댓글 달기는 누구나 가능 합니다<br>
+        단, 댓글을 삭제 할 경우, 자신만 삭제 가능하고, 딸려있는 댓글은 전부 다 삭제 됩니다.<br>
+        <br>
+        검색 키워드와 검색 종류는 한번 설정하면 창을 닫을 때까지 유지 됩니다.<br>
+        페이지 선택 또한 마지막에 누른 것이 무엇을 누르든 어디를 들어가든 유지 됩니다<br>
+        <br>
+        조회수는 최초 오른 후 그 글에 최초 접속시간 + 24시간 뒤에 오릅니다<br>
+        <hr>
+        관리자는 select_all.php 파일의 첫번째 줄의 PAGING_MAX 변수를 조절하여 페이지네이션 갯수 조절 가능<br>
+        관리자는 DB_SELECT.php 파일의 one_page_count 변수를 조절하여 한페이지당 보여줄 게시글 수를 조절 가능
+        <hr>
+        <input type="submit" value="목록으로">
+        ▽마우스를 내려서 움직여 보세요▽
+    </div>
+</form>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+    var width = Math.max(960, innerWidth),
+        height = Math.max(500, innerHeight);
+
+    var i = 0;
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    svg.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
+
+    function particle() {
+        var m = d3.mouse(this);
+
+        svg.insert("circle", "rect")
+            .attr("cx", m[0])
+            .attr("cy", m[1])
+            .attr("r", 1e-6)
+            .style("stroke", d3.hsl((i = (i + 1) % 360), 1, .5))
+            .style("stroke-opacity", 1)
+            .transition()
+            .duration(2000)
+            .ease(Math.sqrt)
+            .attr("r", 100)
+            .style("stroke-opacity", 1e-6)
+            .remove();
+
+        d3.event.preventDefault();
+    }
+
+</script>
+</body>
+</html>

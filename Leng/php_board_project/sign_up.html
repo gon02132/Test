@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #write_page{
+            width: 450px;
+            height: 512px;
+            padding:10px;
+            border: 1px solid;
+            overflow: auto;
+            margin: 0px;
+        }
+        .input_text{
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="DB_sign_up.php" method="POST">
+    <div id="write_page">
+        <b>회원가입 기입란입니다. 필수는 꼭 기재하시기 바랍니다</b><br>
+        ID<br>
+        <input type="text" class="input_text" name="user_id" value="필수" onfocus="this.value=''"><br>
+        PASSWORD<br>
+        <input type="text" class="input_text" name="user_pwd" value="필수" onfocus="this.value=''"><br>
+        NAME<br>
+        <input type="text" class="input_text" name="user_name" value="필수" onfocus="this.value=''"><br><br><br>
+        좋아하는것은?<br>
+        <input type="text" class="input_text"><br>
+        싫어하는것은?<br>
+        <input type="text" class="input_text"><br>
+        PHP재밌나요?<br>
+        <input type="text" class="input_text"><br>
+        하고싶은말은?<br>
+        <input type="text" class="input_text" style="height:100px"><br>
+
+    </div>
+    <input type="submit" value="저장">
+    <input type="button" value="작성취소" onclick="location.href = 'list.html';">
+</form>
+
+</body>
+</html>

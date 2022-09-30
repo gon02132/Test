@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <style>
+        #main_div {
+            width: 900px;
+            height: 650px;
+            margin: 0px auto;
+            padding: 5px;
+            border: 0px solid;
+            overflow: auto;
+        }
+        #title_div {
+            margin-bottom: 20px;
+            border: 0px solid;
+            text-align: center;
+        }
+        #login_div {
+            width: 160px;
+            padding: 0px;
+            margin-right: 20px;
+            float: left;
+            border: 0px solid;
+        }
+        #write_div{
+            float: right;
+        }
+        #list_div {
+            width: 676px;
+            padding: 0px 20px 5px 10px;
+            float: left;
+            border: 0px solid;
+        }
+        #pagenation_div{
+            border: 0px solid;
+            margin: 20px 0px 2px 0px;
+            text-align: center;
+        }
+        #serch_div{
+            border: 0px solid;
+            margin: 2px 0px 10px 0px;
+        }
+        #list_main{
+            text-align: center;
+            height: 220px;
+        }
+        #select_option{
+            width: 150px;
+        }
+        #btn2{
+            margin: 0px 0px 0px 5px;
+        }
+        #notice{
+            padding: 110px 0px 0px 18px;
+        }
+        #left_div{
+            height: 370px;
+            float: left;
+        }
+        text{
+            margin-right: 15px;
+        }
+        a{
+            text-decoration: none;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="select_all.js?ver=2"></script>
+</head>
+<body onload="select_all()">
+<form action="see_text.html" id ="see_text" method="POST">
+    <div id="main_div">
+        <div id="title_div">
+            <button type="button" class="btn btn-lg btn-default">!!!!!!!!!dog see pan!!!!!!!!!</button>
+        </div>
+        <div id="left_div">
+            <form action="DB_login.php" id ="login_form" method="POST">
+                <div id="login_div">
+                </div>
+            </form>
+            <form action="readMe.html" id ="notice_form" method="POST">
+                <div id="notice">
+                    <input type="submit" value="Notice(ReadMe)" style="color:#31b0d5">
+                </div>
+            </form>
+        </div>
+        <div id="list_div">
+            <div id="serch_div">
+                <select id="select_option" class="form-control">
+                    <option id="title_serch" value="title_serch">제목만</option>
+                    <option id="text_serch" value="text_serch">내용만</option>
+                    <option id="person_serch" value="person_serch">작성자</option>
+                    <option id="all_serch" value="all_serch">전부</option>
+                </select>
+                <input type='text' id = "serch_str" class="form-control" placeholder="검색 키워드">
+                <input type='button' value="검색" onclick="select_all(1)" class="btn btn-sm btn-danger">
+                <div id="write_div">
+                </div>
+            </div>
+            <div id="list_main">
+                <table border="1px" style="border-collapse: collapse" id="table_list" align="center" class="table table-striped">
+                    <thead>
+                    <tr align="center" bgcolor="#04B45F">
+                        <td width="50px">번호</td>
+                        <td width="250px"> 제목</td>
+                        <td width="150px">작성자</td>
+                        <td width="62px">조회수</td>
+                        <td width="150px">작성일/최근 수정일</td>
+                    </tr>
+                    </thead>
+                    <tbody id = "tbody_cyka">
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="pagenation_div">
+                pagenation
+            </div>
+        </div>
+    </div>
+    <div id="ttqtt" align="center"></div>
+</form>
+</body>
+</html>

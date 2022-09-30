@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #write_page{
+            width: 450px;
+            height: 512px;
+            padding:10px;
+            border: 1px solid;
+            overflow: hidden;
+            margin: 0px;
+        }
+        #title{
+            width:100%;
+            height: 5%;
+            margin: 0px 0px 10px 0px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="DB_INSERT.php" method="POST">
+    <div id="write_page">
+
+        <input type="text" name="title" id="title">
+        <textarea name="text_main" rows="32" cols="68"></textarea>
+
+    </div>
+    <input type="submit" value="저장">
+    <input type="button" value="작성취소" onclick="location.href = 'list.html';">
+</form>
+
+</body>
+</html>
