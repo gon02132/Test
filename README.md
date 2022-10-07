@@ -1,1 +1,2 @@
-# test
+# Hello World!
+### This is Test directory to log my study history related on any development things like language, Logic, tech etc...
