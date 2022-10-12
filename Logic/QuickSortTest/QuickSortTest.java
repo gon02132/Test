@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Arrays;
 
-public class QuickSortTest {
+public class BinarySearchTest {
 
     public static void main(String[] args) throws IOException {
 
@@ -245,7 +245,7 @@ class TreadTest implements Runnable {
 
     public void run() {
 
-        QuickSortTest.quickSort(arr, low, high);
+        t1.quickSort(arr, low, high);
     }
 }
 
@@ -261,6 +261,6 @@ class TreadTest2 implements Runnable {
     }
 
     public void run() {
-        QuickSortTest.dualQuickSortThread(arr, low, high);
+        t1.dualQuickSortThread(arr, low, high);
     }
 }
